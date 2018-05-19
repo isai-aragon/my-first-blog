@@ -27,37 +27,16 @@
           <br />
           <br />
       </div>
-
-      <div>
-          <p>
-              publicado: 16.05.2018, 13:25
-          </p>
-          <h2><a href="">Mi primer publicación</a></h2>
-          <p>
-              Django es un framework de desarrollo web de código abierto,
-              escrito en Python, que respeta el patrón de diseño conocido como
-              Modelo–vista–template.
-              Fue desarrollado en origen para gestionar varias páginas
-              orientadas a noticias de la World Company de Lawrence, Kansas, y
-              fue liberada al público bajo una licencia BSD en julio de 2005;
-              el framework fue nombrado en alusión al guitarrista de jazz
-              gitano Django Reinhardt.
-          </p>
-     </div>
-
-     <div>
-         <p>
-             Publicado en 16.05.2018, 16:40
-         </p>
-         <h2><a href="">Mi segunda publicación</a></h2>
-         <p>
-             La meta fundamental de Django es facilitar la creación de sitios
-             web complejos. Django pone énfasis en el re-uso, la conectividad
-             y extensibilidad de componentes, el desarrollo rápido y el
-             principio No te repitas (DRY, del inglés Don't Repeat Yourself).
-         </p>
-     </div>
-
+			
+      {% for post in posts %}
+		  <div>
+				
+				<h2><a href="">{{ post.title }}</a></h2>
+				<p>Publicado: {{ post.published_date }}</p>
+				<p>{{ post.text|linebreaksbr }}</p>
+				
+		  </div>
+	  {% endfor %}
 
 
 
